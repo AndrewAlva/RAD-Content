@@ -4,11 +4,11 @@
 
 const container = document.getElementById('piecesContainer');
 
-var start = 114;
-var total = 41;
+var start = 0;
+var total = 97;
 // var start = 172;
 // var total = 66;
-var base = "pieces/01-fluid-sim-vol1/output.";
+var base = "pieces/01-fluid-sim-vol1/movie.0.";
 var stagger = 350;
 var counter = 0;
 
@@ -36,6 +36,8 @@ window.triggerAnimation = function(speed = stagger) {
     var fadeStep = 1 / maxPieces;
 
     function nextImage(id) {
+        // console.log('id', id);
+
         var img = document.createElement('img');
         img.src = base + id + '.png';
         img.rotationDeg = Math.random() * angle - (angle / 2);
